@@ -1,0 +1,731 @@
+{% extends 'application/base.html' %}
+
+{% load i18n static %}
+
+<!-- SCSS -->
+{% block scss %}
+    <link type="text/x-scss" href="{% static 'flatpage/css/flatpage.scss' %}" rel="stylesheet" media="screen">
+{% endblock %}
+
+{% block breadcrumb %}
+<!-- MAIN BREADCRUMB -->
+<div id="main-breadcrumb" class="row p-1">
+    <div class="col-12">
+        <a href="{% url 'flatpage:index' %}">{% trans 'home'|capfirst %}</a> <i class="fas fa-chevron-right"></i> 
+        <a href="{% url 'flatpage:privacy-policy' %}">{% trans 'privacy policy'|capfirst %}</a> 
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<!-- FLATPAGE -->
+<div id="flatpage" class="col-12 privacy-policy">
+
+    <!-- TITLE -->
+    <div id="title" class="row p-1">
+        <h1 class="p-1">{% trans 'privacy policy'|capfirst %}</h1>
+    </div>
+
+    <!-- GRELDAS LOGO -->
+    <div id="greldas-log" class="row p-5">
+        <img class="img-responsive mx-auto" src="{% static 'application/lib/images/greldas/greldas-logo-large.png' %}" alt="greldas logo" width="300px"/>
+    </div>
+
+    <!-- TCU PREAMBULE -->
+    <div id="preambule" class="row">
+
+        <div class="col-12">
+
+            <p>
+                La présente Politique de Confidentialité est éditée par l’auto-entreprise représentée par Monsieur Guillaume SADLER, inscrit au Répertoire des Entreprises et des Établissements sous le numéro SIRET 791 791 189 00024 dont le siège social est situé au 186 rue Jacques Rivière, 30900 Nîmes.
+            </p>
+
+            <p>
+                La présente Politique de Confidentialité a pour but de vous informer sur les modalités de collecte, de traitement et d’utilisation de vos données à caractère personnel* ainsi que de vos droits et obligations en matière de protection des données à caractère personnel dans le cadre de l’utilisation des applications édités par Monsieur Guillaume SADLER et pointant vers cette Politique de Confidentialité.
+            </p>
+
+            <p>
+                <i>* données à caractère personnel</i> : Sont considérés comme des données personnelles, toute information se rapportant à une personne physique identifiée ou identifiable. <br>
+                Vous pouvez obtenir de plus amples informations concernant les données personnelles en vous rendant sur <a href="https://www.cnil.fr/fr/definition/donnee-personnelle">le site de la CNIL</a> (Commission Nationale Informatique et Liberté)
+            </p>
+
+            <p>
+                Cette politique de confidentialité complète les <a href="{% url 'flatpage:legal-notice' %}">mentions légales</a> et les <a href="{% url 'flatpage:tcu' %}">Conditions Générales d’Utilisation</a>.
+            </p>
+
+            <p>
+                En accédant aux Applications et/ou en utilisant les Services, vous reconnaissez avoir pris connaissance de la présente Politique de Confidentialité.
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- ARTICLE 1 -->
+    <div id="article-1" class="row">
+
+        <div class="col-12">
+
+            <h2>ARTICLE 1 - DÉFINITIONS ET CHAMP D’APPLICATION</h2>
+
+            <h3>ARTICLE 1.1 - DÉFINITIONS</h3>
+
+            <p>
+                Les définitions ci-dessous ont une signification identique qu’elles soient utilisées au singulier ou au pluriel. 
+            </p>
+
+            <ul>
+
+                <li>
+                    <b>Application</b> : Désigne un programme conçu pour répondre à un ensemble de besoins précis. Par mesure de simplicité, nous utiliserons le terme Application pour englober les sites internet (Site vitrine, Site communautaire, Boutique en ligne, Portail etc.).
+                </li>
+
+                <li>
+                    <b>Éditeur</b> : Désigne Monsieur Guillaume SADLER, représentant de l’auto-entreprise, inscrit au Répertoire des Entreprises et des Établissements sous le numéro SIRET 791 791 189 00024 dont le siège social est situé au 186 rue Jacques Rivière, 30900 Nîmes.
+                </li>
+
+                <li>
+                    <b>Service</b> : Désigne l’ensemble des prestations fournies par Monsieur Guillaume SADLER tels que les Sites, les Jeux et les Applications.
+                </li>
+
+            </ul>
+
+            <h3>ARTICLE 1.2 - CHAMP D’APPLICATION</h3>
+
+            <p>
+                La présente Politique de Confidentialité s'applique, sans restriction ni réserve, à l'ensemble des services proposés sur les Applications. 
+            </p>
+
+            <p>
+                La présente Politique de Confidentialité prend effet à compter de leur publication sur les Applications et restent en vigueur jusqu’à leur modification partielle ou totale par l'Éditeur.
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- ARTICLE 2 -->
+    <div id="article-2" class="row">
+
+        <div class="col-12">
+            
+            <p>
+                Le Règlement Général sur la Protection des Données (RGPD) 2016/679 défini, la collecte et le traitement des données des Utilisateurs des Applications.
+            </p>
+
+            <ul>
+
+                <li>
+                    <b>Transparence</b> : Les données des Utilisateurs ne peuvent être collectées et traitées qu’avec le consentement éclairé de l’Utilisateur qui reste propriétaire de ses données à caractère personnel. Chaque collecte de données à caractère personnel doit faire l’objet d’une notification auprès de l’Utilisateur concerné afin que lui soit exposé les raisons et la finalité de la collecte des données concernées.
+                </li>
+
+                <li>
+                    <b>Finalités limitées</b> : La collecte et le traitement des données doit répondre à un ou plusieurs objectifs déterminés par la présente Politique de Confidentialité ;
+                </li>
+
+                <li>
+                    <b>Collecte et traitement des données</b> : Seules les données nécessaires à la bonne exécution des objectifs poursuivis par l’Application se doivent d’être collectées ;
+                </li>
+
+                <li>
+                    <b>Conservation des données</b> : Les données doivent être conservées pour une durée limitée, l’Utilisateur devant en être informé. Lorsque cette information ne peut être communiquée, l’Utilisateur doit être informé des critères utilisés pour déterminer la durée de conservation des données concernées ;
+                </li>
+
+                <li>
+                    <b>Intégrité et confidentialité des données collectées et traitées</b> : Le responsable du traitement des données s’engage à garantir l’intégrité et la confidentialité des données collectées et à pour ce faire une obligation de moyens.
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+    <!-- ARTICLE 3 -->
+    <div id="article-3" class="row">
+
+        <div class="col-12">
+            
+            <h2>ARTICLE 3 - DONNÉES COLLECTÉES</h2>
+
+            <h3>ARTICLE 3.1 - MODE DE COLLECTE</h3>
+
+            <p>
+                Lors de l’utilisation des Applications et Services, certaines données à caractère personnel peuvent être demandées à l’Utilisateur. <br>
+                Les données à caractère personnel collectées sur l’application sont définis ci-dessous. 
+            </p>
+            
+            <h3>Création d’un compte</h3>
+
+            <p>
+                Lorsque l’Utilisateur est amené à créer un compte, les données à caractère personnel collectées sont les suivantes : 
+                <strong>Nom de compte</strong>, <strong>Mot de passe</strong> et <strong>Adresse e-mail</strong>.
+            </p>
+
+            <h3>Certification d’un compte</h3>
+
+            <p>
+                L’Utilisateur, s’il le souhaite, pourra faire certifier son compte, les données à caractère personnel collectées sont les suivantes : 
+                <strong>Numéro de téléphone mobile</strong> et <strong>Question secrète</strong>.
+            </p>
+
+            <h3>Modification des paramètres d’un compte</h3>
+
+            <p>
+                L’Utilisateur, s’il le souhaite, pourra modifier les paramètres de son compte, les données à caractère personnel collectées sont les suivantes : 
+                <strong>Préférence en matière de réception de newsletter par e-mail</strong>, <strong>Language</strong>, <strong>Nom de compte</strong> (pseudo) et <strong>Avatar</strong>.
+            </p>
+
+            <h3>Achat en ligne</h3>
+
+            <p>
+                Lorsque l’Utilisateur est amené à effectuer un achat sur l’une des Applications, les données à caractère personnel collectées sont les suivantes : 
+                <strong>Informations de paiement dépendant du moyen de paiement sélectionné</strong>, <strong>Civilité</strong>, <strong>Nom</strong>, <strong>Prénom</strong>, <strong>Date de naissance</strong>, <strong>Adresse postale</strong> et <strong>Pays de résidence</strong>.
+            </p>
+
+            <h3>Support</h3>
+
+            <p>
+                Lorsque l’Utilisateur est amené à contacter le Support (Service Client), les données à caractère personnel collectées sont les suivantes :
+            </p>
+
+            <h3>Jeux concours, Tournois, Loterie, Sondage</h3>
+
+            <p>
+                Lorsque l’Utilisateur est amené à participer à un jeux concours, un tournois, une loterie et/ou un sondage, les données à caractère personnel collectées pourront être les suivantes :
+                Nom</strong>, <strong>Prénom</strong>, <strong>Date de naissance</strong>, <strong>Adresse postale</strong> et <strong>Adresse e-mail</strong>.
+            </p>
+
+            <p>
+                Lors de l’utilisation des Applications et Services, certaines données sont collectées afin de connaître la manière dont l’Utilisateur utilise les Applications et Services.
+            </p>
+
+            <h3>Navigation</h3>
+
+            <p>
+                Lorsque l’Utilisateur navigue sur les Applications, les données suivantes sont collectées :
+                <strong>Adresse IP</strong>, <strong>Date et Heure de connexion à l’Application</strong>, <strong>Interventions sur les Applications</strong> (forums, commentaires etc.) et les <strong>Interactions avec les Applications</strong> (pages visitées etc.).
+            </p>
+
+            <h3>Jeux</h3>
+
+            <p>
+                Lorsque l’Utilisateur utilise les jeux en ligne, les données suivantes sont collectées :
+                <strong>Adresse IP</strong>, <strong>Log et Historique des échanges de données</strong>, <strong>Log et Historique des connexions</strong>, <strong>Log et Historique des actions réalisées en jeu</strong>.
+            </p>
+
+            <p>
+                Lors de l’utilisation des réseaux sociaux afin de permettre à l’Utilisateur de ce connecter aux Applications et Services, certaines données sont collectées.
+            </p>
+
+            <p>
+                Les réseaux sociaux sont créés et gérés par des tiers et ne sont en aucun cas contrôlés par l'Éditeur. <br>
+                Les Conditions Générales d’Utilisation et la ou les Politique(s) de Confidentialité leurs sont propres, l’Utilisateur est expressément invité à consulter leurs différents documents mis à sa disposition afin de connaître la façon dont ces tiers traitent ces données et celles qu’ils sont susceptibles de nous communiquer.  
+            </p>
+
+            <h3>ARTICLE 3.2 - FINALITÉS DU TRAITEMENT DES DONNÉES</h3>
+            
+            <p>
+                Utilisation des données s’avérant nécessaires à la bonne exécution d’un contrat conclu entre l’Utilisateur et l’Éditeur, les données de l’Utilisateur sont ainsi traitées aux fins suivantes : 
+            </p>
+
+            <ul>
+
+                <li>
+                    Afin de permettre la création, la gestion et le suivi du compte Greldas de l’Utilisateur ;
+                </li>
+
+                <li>
+                    Afin de permettre l’accès aux Applications et aux Services à l’Utilisateur ;
+                </li>
+
+                <li>
+                    Afin de permettre l’achat de produits et services sur les Applications ainsi que le traitement, la gestion, l’envoi et le suivi des commandes de l’Utilisateur ;
+                </li>
+
+                <li>
+                    Afin de permettre la communication entre les Utilisateurs des Applications, notamment via le biais des forums, chats, services de messageries et commentaires ;
+                </li>
+
+                <li>
+                    Afin de permettre la communication entre l’Utilisateur et l’Éditeur concernant les Applications et les Services comme par exemple les e-mails de vérification, les e-mails de confirmation et les e-mails de notification ;
+                </li>
+
+                <li>
+                    Afin de permettre la prise en compte, la gestion et le suivi des réclamations de l’Utilisateur auprès du support.
+                </li>
+
+            </ul>
+
+            <p>
+                Utilisation des données sur la base des intérêts légitimes de l’Éditeur lorsque ceux-ci n’entravent pas les droits et libertés de l’Utilisateur, les données de l’Utilisateur sont ainsi traitées aux fins suivantes :
+            </p>
+
+            <ul>
+
+                <li>
+                    Afin d’améliorer les Applications et les Services ;
+                </li>
+
+                <li>
+                    Afin d’assurer la sécurité des comptes ;
+                </li>
+
+                <li>
+                    Afin de permettre la tenue, la gestion et le suivi des jeux concours, tournois, loteries et sondages ;
+                </li>
+
+                <li>
+                    Afin de permettre la prévention, la détection et la régularisation de comportement enfreignant, entre autres, les Conditions Générales d’Utilisation et les Conditions Générales de Vente ;
+                </li>
+
+                <li>
+                    Afin de mesurer la performance des campagnes digitales et marketing ;
+                </li>
+
+                <li>
+                    Afin de personnaliser et d’améliorer les publicités proposés aux Utilisateurs dans le cadre de leurs navigations sur les Applications et les Services.
+                </li>
+
+            </ul>
+
+            <p>
+                Utilisation des données lorsque cela s’avère nécessaire au respect des obligations légales et notamment à des fins de respect des obligations comptables et fiscales.
+            </p>
+
+            <h3>ARTICLE 3.3 - TRANSMISSION DES DONNÉES À DES TIERS</h3>
+
+            <p>
+                Les données à caractère personnel de l’Utilisateur pourront être communiquées, comme la loi le permet, aux autorités compétentes, à leur demande, dans le cadre de procédure judiciaires, de recherches judiciaires et de sollicitations d’informations des autorités ou afin de se conformer à d’autres obligations légales.
+            </p>
+
+            <p>
+                Les données à caractère personnel collectées par les Applications ne sont transmises à aucun tiers, et ne sont traitées que par l’éditeur des Application, à l'exception des cas suivants : 
+            </p>
+
+            <ul>
+
+                <li>
+                    Les données à caractère personnel de l’Utilisateur pourront être communiquées aux autorités compétentes à leur demande et ce, dans le cadre de procédure judiciaires, de recherches judiciaires et de sollicitations d’informations des autorités ou afin de se conformer à d’autres obligations légales.
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+    <!-- ARTICLE 4 -->
+    <div id="article-4" class="row">
+
+        <div class="col-12">
+            
+            <h2>ARTICLE 4 - SÉCURITÉ</h2>
+
+            <p>
+                Le responsable du traitement des données conservera l’ensemble des données collectées dans les systèmes informatiques des Applications et dans des conditions raisonnables de sécurité.
+            </p>
+
+            <p>
+                Les mesures de sécurité suivantes sont appliquées :
+            </p>
+
+            <ul>
+
+                <li>
+                    <strong>Utilisation systématique du protocole SSH</strong> (Secure SHell) afin de communiquer avec les serveurs ;
+                </li>
+
+                <li>
+                    <strong>Utilisation systématique du protocole HTTPS</strong> (HyperText Transfer Protocol Secure) afin de sécuriser les accès par chiffrement des données ;
+                </li>
+
+                <li>
+                    <strong>Mise en place de procédures de sauvegarde physique et logique des données</strong>.
+                </li>
+
+            </ul>
+
+            <p>
+                L’Éditeur se réserve le droit de poursuivre en justice toute personne qui tenterait d’une manière ou d’une autre, d'accéder à des informations personnelles qui ne la concernerait pas.
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- ARTICLE 5 -->
+    <div id="article-5" class="row">
+
+        <div class="col-12">
+            
+            <h2>ARTICLE 5 - SITES ET APPLICATIONS TIERCES</h2>
+
+            <p>
+                Certains liens hypertextes présents sur les Applications et les Services peuvent pointer vers des sites et applications n’appartenant pas à l’Éditeur.
+            </p>
+
+            <p>
+                L’Utilisateur est amené à prendre connaissance des Politiques de Confidentialités des sites et applications tierces car celles-ci peuvent variées avec la présente Politique de Confidentialités.
+            </p>
+
+            <p>
+                En outre, la responsabilité de l’Éditeur ne saurait être engagée dans le cas ou le contenu du ou des sites et applications tierces contreviendrait aux dispositions légales et réglementaires en vigueur ou à la présente Politique de Confidentialité.
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- ARTICLE 6 -->
+    <div id="article-6" class="row">
+
+        <div class="col-12">
+            
+            <h2>ARTICLE 6 - HÉBERGEMENT DES DONNÉES</h2>
+
+            <p>
+                L’application est hébergé par la société OVH, dont le siège est situé à l’adresse ci-après : <br>
+                2 rue Kellermann - 59100 Roubaix - France
+            </p>
+
+            <p>
+                L’hébergeur peut être contacté au numéro de téléphone suivante : <br>
+                1007
+            </p>
+
+            <p>
+                <strong>Les données collectées et traitées par l’Application sont exclusivement hébergées et traitées en France.</strong>
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- ARTICLE 7 -->
+    <div id="article-7" class="row">
+
+        <div class="col-12">
+            
+            <h2>ARTICLE 7 - RESPONSABLE DU TRAITEMENT DES DONNÉES</h2>
+
+            <h3>ARTICLE 7.1 - LE RESPONSABLE DU TRAITEMENT DES DONNÉES</h3>
+
+            <p>
+                Le responsable du traitement des données est chargé de déterminer les finalités et les moyens mis au service du traitement des données à caractère personnel.
+            </p>
+
+            <p>
+                Le responsable du traitement des données est : <strong>Monsieur Guillaume SADLER</strong>.
+            </p>
+
+            <p>
+                Il peut être contacté de la façon suivante :
+            </p>
+
+            <ul>
+
+                <li>
+                    Soit par e-mail : privacy-policy@greldas.com
+                </li>
+
+                <li>
+                    Soit par courrier : Monsieur Guillaume SADLER, 186 rue Jacques Rivière, 30900 Nimes, FRANCE
+                </li>
+
+            </ul>
+
+            <h3>ARTICLE 7.2 - OBLIGATIONS</h3>
+
+            <ul>
+
+                <li>
+                    À protéger les données à caractère personnel collectées par les Applications et Services fournis par l’Éditeur ; 
+                </li>
+
+                <li>
+                    À ne pas transmettre les données collectées à des tiers sans que l’Utilisateur n’en ait été informé ;
+                </li>
+
+                <li>
+                    À respecter les finalités pour lesquelles les données ont été collectées ; 
+                </li>
+
+                <li>
+                    À notifier l’Utilisateur par e-mail, en cas de rectification et/ou de suppression des données le concernant ;
+                </li>
+
+                <li>
+                    À notifier l’Utilisateur par e-mail, dans le cas ou la confidentialité et/ou la sécurité des données à caractère personnel de l’Utilisateur est compromise.
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+    <!-- ARTICLE 8 -->
+    <div id="article-8" class="row">
+
+        <div class="col-12">
+            
+            <h2>ARTICLE 8 - QUESTIONS ET RÉCLAMATIONS</h2>
+
+            <p>
+                Dans un soucis de confidentialité et de protection des données à caractère personnel et afin que le responsable du traitement des données fasse droit à la demande de l’Utilisateur, celui-ci est tenu de lui communiquer : son nom, son prénom, son adresse e-mail ainsi que d’une copie d’un titre d’identité signé.
+            </p>
+
+            <p>
+                Les demandes seront traitées dans un délai de 30 (trente) conformément aux dispositions légales en vigueur.
+            </p>
+
+            <ul>
+
+                <li>
+                    Soit par e-mail : privacy-policy@greldas.com
+                </li>
+
+                <li>
+                    Soit par courrier : Monsieur Guillaume SADLER, 186 rue Jacques Rivière, 30900 Nimes, FRANCE
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+    <!-- ARTICLE 9 -->
+    <div id="article-9" class="row">
+
+        <div class="col-12">
+            
+            <h2>ARTICLE 9 - DROITS DE L’UTILISATEUR</h2>
+
+            <strong>Droits d’accès, de rectification et droit à l’effacement</strong>
+
+            <p>
+                L’Utilisateur peut prendre connaissance, mettre à jour, modifier ou demander la suppression des données le concernant, en respectant la procédure énoncée à l’article 8
+            </p>
+
+            <p>
+                Pour faire suite au droit de l’Utilisateur de demander la suppression de son compte, l’Utilisateur peut se rendre sur son compte et cliquez sur le bouton “Supprimer”, l’Utilisateur est ensuite invité à suivre la procédure indiquée. 
+            </p>
+
+            <p>
+                Des limitations existent, notamment aux fins de protéger nos intérêts légitimes, tels que la détection et la prévention de la fraude, afin de se conformer aux obligations légales.
+            </p>
+
+            <p>
+                L’Utilisateur est également informé que les commentaires et participations sur les forums seront conservés et maintenus publiés mais ne lui seront plus attribué.
+            </p>
+
+            <strong>Droit à la portabilité des données</strong>
+
+            <p>
+                L’Utilisateur est en droit de demander la portabilité de ses données personnelles, détenues par les Applications et Services lorsque cela s'avère techniquement possible en contactant le Responsable du traitement des données via la procédure énoncée à l’article 8.
+            </p>
+
+            <strong>Droit à la limitation et à l’opposition du traitement des données</strong>
+
+            <p>
+                L’Utilisateur est en droit de demander la limitation ou de s’opposer au traitement de ses données par l’application, sans que l’application ne puisse refuser, sauf à démontrer l’existence de motifs légitimes et impérieux, pouvant prévaloir sur les intérêts et les droits et libertés de l’utilisateur.
+            </p>
+
+            <p>
+                Afin de demander la limitation du traitement de ses données ou de formuler une opposition au traitement de ses données, l’utilisateur doit suivre la procédure énoncée à l’article 8. 
+            </p>
+
+            <strong>Droit de ne pas faire l’objet d’une décision fondée exclusivement sur un procédé automatisé</strong>
+
+            <p>
+                Conformément aux dispositions du Règlement Général sur la Protection des Données 2016/679, l’Utilisateur est en droit de ne pas faire l’objet d’une décision fondée exclusivement sur un procédé automatisé si la décision produit des effets juridiques le concernant, ou l’affecte de manière significative.
+            </p>
+
+            <p>
+                Pour faire valoir ce droit, l’Utilisateur est amené à contacter le support qui procédera à la vérification manuelle des décisions fondées sur un procédé automatisé.
+            </p>
+
+            <strong>Droit de déterminer le sort des données après la mort</strong>
+
+            <p>
+                Il est rappelé à l’Utilisateur qu’il peut organiser quel doit être le devenir de ses données collectées et traitées si il décède, conformément à la loi n°2016-1321 du 7 octobre 2016.
+            </p>
+
+            <strong>Droit de saisir l’autorité de contrôle compétente</strong>
+
+            <p>
+                Dans le cas ou le responsable du traitement des données décides de ne pas répondre à la demande de l’Utilisateur, et que l’Utilisateur souhaite contester cette décision, ou s’il, pense qu’il est porté atteinte à l’un des droits énumérés ci-dessus, il est en droit de saisir la CNIL (Commission Nationale de l’Informatique et des Libertés) ou tout juge compétent.
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- ARTICLE 10 -->
+    <div id="article-10" class="row">
+
+        <div class="col-12">
+            
+            <h2>ARTICLE 10 - COOKIES</h2>
+
+            <p>
+                Un “cookie” est un fichier de petite taille contenant des informations, stocké par une application sur le disque dur de l’utilisateur.
+            </p>
+
+            <p>
+                Un “cookie” contient plusieurs données :
+            </p>
+
+            <ul>
+
+                <li>
+                    Le nom du serveur qui a déposé le cookie,
+                </li>
+
+                <li>
+                    Son identifiant,
+                </li>
+
+                <li>
+                    Éventuellement, une date d’expiration.
+                </li>
+
+            </ul>
+
+            <p>
+                Un “cookie” peut être :
+            </p>
+
+            <ul>
+
+                <li>
+                    Un “cookie” de session, supprimés lorsque la session (le navigateur) est fermée,
+                </li>
+
+                <li>
+                    Un “cookie” dit “persistant”, qui comme son nom l’indique, persiste sur l’ordinateur de l’utilisateur.
+                </li>
+
+            </ul>
+
+            <p>
+                Les “cookies” permettent, entre autres, de traiter des statistiques et des informations sur le trafic, de faciliter la navigation et d'améliorer le service pour le confort de l'Utilisateur.
+            </p>
+
+            <p>
+                Les "cookies" impliquant la sauvegarde et l'analyse de données à caractère personnel doivent systématiquement faire l’objet du consentement de l'utilisateur. Le consentement ainsi obtenu est considéré comme valide pour une durée de 13 (treize) mois maximum. A l'issue de cette période, il sera de nouveau demander à l’Utilisateur l'autorisation d’enregistrer des "cookies" sur son disque dur.
+            </p>
+
+            <strong>Opposition de l'Utilisateur à l'utilisation de fichiers "cookies"</strong>
+
+            <p>
+                Il est porté à la connaissance de l'Utilisateur, que celui-ci peut s'opposer à l'enregistrement des "cookies" en configurant son logiciel de navigation. <br>
+                Il est également porté à la connaissance de l’Utilisateur que son refus d’enregistrement des “cookies” pourra entraîner une suspension des Services fournis par les Applications tels que la connexion au compte. <br>
+                Ainsi, tout dysfonctionnement des Applications provoquées par la manipulation des droits concernants les “cookies” ne pourrait être considéré comme étant du fait de l'Éditeur.
+            </p>
+
+            <p>
+                Pour information, l'Utilisateur peut trouver aux adresses suivantes les démarches à suivre afin de configurer son navigateur pour s'opposer à l'enregistrement des "cookies" :
+            </p>
+
+            <ul>
+
+                <li>
+                    <strong>Google</strong> : <a href="https://support.google.com/accounts/answer/61416?hl=fr">https://support.google.com/accounts/answer/61416?hl=fr</a>
+                </li>
+
+                <li>
+                    <strong>Mozilla</strong> : <a href="https://support.mozilla.org/fr/kb/enable-and-disable-cookies-website-preferences">https://support.mozilla.org/fr/kb/enable-and-disable-cookies-website-preferences</a>
+                </li>
+
+                <li>
+                    <strong>Apple</strong> : <a href="http://www.apple.com/legal/privacy/fr-ww/">http://www.apple.com/legal/privacy/fr-ww/</a>                    
+                </li>
+
+                <li>
+                    <strong>Internet Explorer</strong> : <a href="https://support.microsoft.com/fr-fr/help/17442/windows-internet-explorer-delete-manage-cookies">https://support.microsoft.com/fr-fr/help/17442/windows-internet-explorer-delete-manage-cookies</a>
+                </li>
+
+                <li>
+                    <strong>Opera</strong> : <a href="http://www.opera.com/help/tutorials/security/cookies/">http://www.opera.com/help/tutorials/security/cookies/</a>
+                </li>
+
+            </ul>
+
+            <strong>Description des fichiers "cookies" utilisés par le site</strong>
+
+            <p>
+                L'éditeur du site attire l'attention de l'Utilisateur sur le fait que les cookies suivants sont utilisés lors de sa navigation :
+            </p>
+
+            <ul>
+
+                <li>
+                    Les cookies strictement nécessaires au bon fonctionnement des Applications et Services; ils ont notamment pour vocation l'identification de l’Utilisateur ainsi que l’accès au compte de l’Utilisateur et la gestion de ses commandes ; 
+                </li>
+
+                <li>
+                    Les cookies améliorant la navigation de l’Utilisateur sur les Applications en permettant à l’Éditeur de conserver les préférences de l’Utilisateur ;
+                </li>
+
+                <li>
+                    Les cookies permettant l’analyse et la mesure d’audience.
+                </li>
+
+            </ul>
+
+            <p>
+                Les Applications peuvent intégrer des boutons de réseaux sociaux, permettant à l'utilisateur de partager son activité sur les Applications concernées. <br>
+                Des "cookies" appartenant à ces réseaux sociaux sont par conséquent susceptibles d'être stockés sur l'ordinateur de l'utilisateur lorsqu'il utilise ces fonctionnalités. <br>
+                L'attention de l'utilisateur est portée sur le fait que ces sites disposent de politiques de confidentialité propres et de conditions générales d'utilisation possiblement différentes du site. <br>
+                L'Éditeur invite les utilisateurs à consulter les politiques de confidentialité et les conditions générales d'utilisation de ces sites.
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- ARTICLE 11 -->
+    <div id="article-11" class="row">
+
+        <div class="col-12">
+            
+            <h2>ARTICLE 11 - CONSERVATION DES DONNÉES</h2>
+
+            <p>
+                Les données à caractère personnel sont conservées aussi longtemps que nécessaire pour l’accomplissement des finalités prévues par la présente Politique de Confidentialité, dans le respect de la législation en vigueur.
+            </p>
+            
+        </div>
+
+    </div>
+
+    <!-- ARTICLE 12 -->
+    <div id="article-12" class="row">
+
+        <div class="col-12">
+            
+            <h2>ARTICLE 12 - MISE À JOUR</h2>
+
+            <p>
+                La présente Politique de Confidentialité peut être mis à jour de manière régulière, et sont donc susceptibles de modification. <br>
+                L'Éditeur se réserve le droit de modifier unilatéralement la présente Politique de Confidentialité à tout moment, et ce, sans préavis. <br>
+                Les nouvelles caractéristiques seront mises en ligne sur les Applications afin d’être portées à la connaissance des Utilisateurs. <br>
+                Il appartient en conséquence aux Utilisateurs de l’Application de consulter la présente Politique de Confidentialité régulièrement. <br>
+                Chaque utilisation des Services proposés sur les Applications par les Utilisateurs constitue l’acceptation de la dernière version de la Politique de Confidentialité publiée sur les Applications.
+            </p>
+
+            <p>
+                Il est porté à la connaissance de l’utilisateur que la dernière mise à jour de la politique de confidentialité est intervenue le : 04/05/2020
+            </p>
+
+            
+        </div>
+
+    </div>
+
+</div>  
+    
+{% endblock %}

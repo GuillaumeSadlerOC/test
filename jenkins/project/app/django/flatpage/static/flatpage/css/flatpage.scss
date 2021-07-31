@@ -1,0 +1,40 @@
+/***
+*
+*   FLATPAGE CSS
+*
+*   AUTHORS & COPYRIGHT
+*   By : Guillaume Sadler
+*   For : Greldas
+*   Join us on www.greldas.com
+*
+***/
+
+/***
+*    DEFAULT CSS IMPORTS
+***/
+
+@import "./application/lib/css/greldas-properties";
+@import "./application/lib/css/utilities-properties";
+@import "./application/lib/css/default-properties";
+
+#flatpage #title{
+    background-color: rgba(34, 49, 63, 1);
+}
+
+#flatpage #title h1{
+    color: rgba(250, 250, 250, 1);
+    font-size: 40px;
+    margin-bottom: 0;
+}
+
+/***
+*   DEFAULT FLATPAGES CSS IMPORTS
+***/
+
+@import "default/cookies";
+@import "default/credits";
+@import "default/gcs";
+@import "default/index";
+@import "default/legal-notice";
+@import "default/privacy-policy";
+@import "default/tcu";

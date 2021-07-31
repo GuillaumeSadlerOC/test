@@ -1,0 +1,98 @@
+/***
+*
+*   COMMON CSS
+*
+*   MODIFICATIONS
+*   Last modification date : 20/04/2020
+*
+*   AUTHORS & COPYRIGHT
+*   By : Guillaume Sadler
+*   For : Greldas
+*   Join us on www.greldas.com
+*
+***/
+
+/***
+*   1.1.1 - For modals (not push to left the app)
+*   Add overflow: auto; to body
+*   Add overflow: hidden; to html
+***/
+.modal-backdrop{
+    z-index: 0;
+}
+
+.modal-footer small{
+    font-size: 1em;
+}
+
+.modal-open {
+    overflow: auto;
+}
+
+#LoginModal{
+
+    h2{
+        font-size: 15px;
+        font-weight: bold;
+    }
+
+    a.twitter,
+    a.facebook,
+    a.google,
+    a.greldas{
+        color: rgba(250, 250, 250, 1);
+        border: 1px solid rgba(250, 250, 250, 1);
+        font-size: 1.6vh;
+        font-weight: bold;
+        border-radius: 6px;
+    }
+
+    a.twitter{
+        background-color: $_TWITTER;
+    }
+    a.twitter:hover{
+        background-color: rgba(85, 172, 238, 0.8);
+        border: 1px solid rgba(85, 172, 238, 1);
+        border-radius: 6px;
+    }
+
+    a.facebook{
+        background-color: $_FACEBOOK;
+    }
+    a.facebook:hover{
+        background-color: rgba(59, 89, 153, 0.8);
+        border: 1px solid rgba(59, 89, 153, 1);
+        border-radius: 6px;
+    }
+
+    a.google{
+        background-color: $_GOOGLE;
+    }
+    a.google:hover{
+        background-color: rgba(50, 50, 50, 0.8);
+        border: 1px solid rgba(50, 50, 50, 1);
+        border-radius: 6px;
+    }
+
+    a.greldas{
+        background-color: $_GRELDAS_ACCOUNT_COLOR;
+    }
+    a.greldas:hover{
+        background-color: rgba(40, 80, 143, 0.8);
+        border: 1px solid rgba(40, 80, 143, 1);
+        border-radius: 6px;
+    }
+
+    small{
+        font-size: 15px;
+    }
+
+    small a:hover{
+        color: rgba(59, 89, 153, 1);
+    }
+
+    .sign-in-form,
+    .sign-in-social{
+        border-bottom: solid 1px rgba(200, 200, 200, 0.3);
+    }
+}

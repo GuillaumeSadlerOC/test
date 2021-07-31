@@ -1,0 +1,129 @@
+{% extends 'application/base.html' %}
+
+{% load i18n static %}
+
+<!-- SCSS -->
+{% block scss %}
+    <link type="text/x-scss" href="{% static 'flatpage/css/flatpage.scss' %}" rel="stylesheet" media="screen">
+{% endblock %}
+
+{% block breadcrumb %}
+<!-- MAIN BREADCRUMB -->
+<div id="main-breadcrumb" class="row p-1">
+    
+    <div class="col-12">
+        <a href="{% url 'flatpage:index' %}">{% trans 'home'|capfirst %}</a> <i class="fas fa-chevron-right"></i> 
+        <a href="{% url 'flatpage:credits' %}">{% trans 'credits'|capfirst %}</a>
+    </div>
+
+</div>
+{% endblock %}
+
+{% block content %}
+<!-- FLATPAGE -->
+<div id="flatpage" class="col-12 credits">
+
+    <!-- PAGE TITLE -->
+    <div id="title" class="row p-1">
+        <h1 class="p-1">{% trans 'credits'|upper %}</h1>
+    </div>
+    
+    <!-- GRELDAS LOGO -->
+    <div class="row p-5" id="greldas-log">
+        <img class="img-responsive mx-auto" src="{% static 'application/lib/images/greldas/greldas-logo-large.png' %}" alt="greldas logo" width="300px"/>
+    </div>
+
+    <!-- GRIMORDAL -->
+    <div class="row mb-5">
+
+        <div class="col-12">
+
+            <h2><i class="far fa-copyright"></i> GRIMORDAL</h2>
+
+            <ul>
+
+                <li>
+                    <b>Grimordal</b> {% trans 'is registered trademark.' %} <b>{% trans 'All rights reserved.' %}</b><br>
+                    {% trans 'For more informations about our intellectual properties,'|capfirst %} <a href="{% url 'flatpage:tcu' %}">{% trans 'click-here' %}</a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+    
+    <!-- FLATICON -->
+    <div class="row mb-5">
+
+        <div class="col-12">
+
+            <h2><i class="far fa-copyright"></i> FLATICON</h2>
+
+            <ul>
+
+                <li>
+                    {% trans 'This application may have to use Flaticon icons.'|capfirst %} <br>
+                    <b>{% trans 'All rights reserved for Flaticon icons.'|capfirst %}</b> <br>
+                    {% trans 'Profesionnal Flaticon license' %} / @Greldas <br>
+                    {% trans 'For more informations about this service,'|capfirst %} <a href="https://www.flaticon.com/">{% trans 'click-here' %}</a>
+                </li>
+
+                <li>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+    <!-- FONT AWESOME -->
+    <div class="row mb-5">
+
+        <div class="col-12">
+
+            <h2><i class="far fa-copyright"></i> FONT AWESOME</h2>
+
+            <ul>
+
+                <li>
+                    {% trans 'This application may have to use Fontawesome icons.'|capfirst %} <br>
+                    <b>{% trans 'All rights reserved for Fontawesome icons.'|capfirst %}</b> <br>
+                    {% trans 'For more informations about this service,'|capfirst %} <a href="https://fontawesome.com/">{% trans 'click-here' %}</a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+    <!-- PIXABAY -->
+    <div class="row mb-5">
+
+        <div class="col-12">
+
+            <h2><i class="far fa-copyright"></i> PIXABAY</h2>
+
+            <ul>
+
+                <li>
+                    {% trans 'This application may have to use Pixabay images.'|capfirst %} <br>
+                    <b>{% trans 'All rights reserved for Pixabay images.'|capfirst %}</b> <br>
+                    {% trans 'For more informations about this service,'|capfirst %} <a href="https://pixabay.com/fr/">{% trans 'click-here' %}</a>
+                </li>
+
+                <li>
+                    {% trans 'if you like this app background, quickly see the work of its fabulous author !'|capfirst %}
+                    <a href="https://pixabay.com/fr/illustrations/arri%C3%A8re-plan-patron-r%C3%A9sum%C3%A9-triangle-1545401/">{% trans 'click-here' %}</a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</div>
+{% endblock %}

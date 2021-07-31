@@ -1,0 +1,42 @@
+####################################################
+# Linux
+####################################################
+---
+- hosts: all
+  become: true
+  vars_files:
+    - vars/default.yml
+
+  tasks:
+    # Current User
+    - name: Create user {{ user_name }}
+      user:
+        name: "{{ user_name }}"
+        state: present
+        groups: sudo
+        append: yes
+        shell: /bin/bash
+    - name: Add public ssh key to user
+      authorized_key:
+        user: "{{ user_name }}"
+        state: present
+        key: "{{ lookup('file', '{{ ssh_public_key_path }}{{ ssh_public_key_name }}') }}"
+    
+    # UFW
+    - name: "Enabled UFW"
+      ufw:
+        state: enabled
+    - name: "Allow SSH"
+      ufw:
+        rule: allow
+        name: OpenSSH
+
+    # Copy Jenkins conf
+    - name: Copy Jenkins conf
+      template: 
+        src: "templates/jenkins.j2" 
+        dest: "/etc/default/jenkins"
+        owner: root
+        group: root
+        mode: 0644
+        backup: true

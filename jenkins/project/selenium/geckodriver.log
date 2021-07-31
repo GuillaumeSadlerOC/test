@@ -1,0 +1,49 @@
+1620813446944	geckodriver	INFO	Listening on 127.0.0.1:56009
+1620813447953	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileGdUiQy"
+1620813448513	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1620813449601	Marionette	INFO	Listening on port 40189
+1620813449673	Marionette	WARN	TLS certificate errors will be ignored for this session
+1620813457681	Marionette	INFO	Stopped listening on port 40189
+1620813482890	geckodriver	INFO	Listening on 127.0.0.1:51105
+1620813482894	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileFANdvo"
+1620813483331	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1620813484507	Marionette	INFO	Listening on port 40701
+1620813484619	Marionette	WARN	TLS certificate errors will be ignored for this session
+1620813505335	Marionette	INFO	Stopped listening on port 40701
+1620813514028	geckodriver	INFO	Listening on 127.0.0.1:36721
+1620813514032	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileNcSmM5"
+1620813514443	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1620813515487	Marionette	INFO	Listening on port 37765
+1620813515545	Marionette	WARN	TLS certificate errors will be ignored for this session
+1620813519773	Marionette	INFO	Stopped listening on port 37765
+1620813616475	geckodriver	INFO	Listening on 127.0.0.1:55817
+1620813616479	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile2yWsYL"
+1620813616918	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1620813618041	Marionette	INFO	Listening on port 40637
+1620813618092	Marionette	WARN	TLS certificate errors will be ignored for this session
+1620813620724	Marionette	INFO	Stopped listening on port 40637
+1620813654647	geckodriver	INFO	Listening on 127.0.0.1:42003
+1620813654651	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileHbrKHk"
+1620813655085	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1620813656113	Marionette	INFO	Listening on port 32967
+1620813656177	Marionette	WARN	TLS certificate errors will be ignored for this session
+1620813660728	Marionette	INFO	Stopped listening on port 32967
+1620814945817	geckodriver	INFO	Listening on 127.0.0.1:36005
+1620814945822	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileN3LhbW"
+1620814946259	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1620814947383	Marionette	INFO	Listening on port 37721
+1620814947441	Marionette	WARN	TLS certificate errors will be ignored for this session
+1620814948759	Marionette	INFO	Stopped listening on port 37721
+1620814964328	geckodriver	INFO	Listening on 127.0.0.1:60639
+1620814964332	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileh66XDz"
+1620814964755	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1620814965715	Marionette	INFO	Listening on port 38757
+1620814965751	Marionette	WARN	TLS certificate errors will be ignored for this session
+1620814967107	Marionette	INFO	Stopped listening on port 38757

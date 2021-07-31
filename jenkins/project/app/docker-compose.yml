@@ -1,0 +1,60 @@
+version: '3.7'
+
+services:
+
+    django_app_1:
+        build: ./django
+        container_name: django_app_1
+        command: >
+            bash -c "
+            python manage.py makemigrations
+            && python manage.py migrate 
+            && python manage.py collectstatic --noinput
+            && python manage.py start
+            && python manage.py flatpage_init
+            && gunicorn application.wsgi:application --bind 0.0.0.0:80 "
+        expose: 
+            - 80
+        volumes:
+            - ./django/:/usr/src/projects/app_1
+            - app_1_static_volume:/usr/src/projects/app_1/static/
+        env_file:
+            - ./envs/.env.app
+            - ./envs/.env.db
+            - ./envs/.env.email
+        networks:
+            - postgres_app_1_network
+            - traefik_webgateway
+        labels:
+            - "traefik.enable=true"
+            - "traefik.docker.network=traefik_webgateway"
+            - "traefik.http.routers.django_app_1.rule=Host(
+                `app1.localhost`,
+                )"
+            - "traefik.http.routers.django_app_1.entrypoints=web"
+        depends_on:
+            - postgres_app_1
+
+    postgres_app_1:
+        image: postgres:latest
+        container_name: postgres_app_1
+        restart: always
+        env_file:
+            - ./envs/.env.db
+        networks:
+            - postgres_app_1_network
+    
+networks:
+
+    postgres_app_1_network:
+        driver: bridge
+        name: postgres_app_1_network
+
+    traefik_webgateway: 
+        external:
+            name: traefik_webgateway
+        
+volumes:
+
+    app_1_static_volume:
+        name: app_1_static_volume

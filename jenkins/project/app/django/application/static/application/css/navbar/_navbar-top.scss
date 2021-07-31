@@ -1,0 +1,67 @@
+/***
+*
+*   NAVBAR TOP
+*
+*   MODIFICATIONS
+*   Last modification date : 20/04/2020
+*
+*   AUTHORS & COPYRIGHT
+*   By : Guillaume Sadler
+*   For : Greldas
+*   Join us on www.greldas.com
+*
+***/
+
+
+/*** VARIABLES ***/
+
+header #navbar-top{
+    font-size: 12px;
+}
+
+header #navbar-top .navbar{
+    color: $DARK_GREY_COLOR_1;
+}
+
+header #navbar-top .navbar a{
+    color: $NAV_LINK_COLOR;
+}
+
+/*** BRAND ***/
+header #navbar-top .navbar-brand{
+    border-radius: $_DEFAULT_BORDER_RADIUS;
+}
+
+header #navbar-top a.navbar-brand{
+    color: $NAV_LINK_COLOR;
+    border-radius: $_DEFAULT_BORDER_RADIUS;
+}
+
+
+header #navbar-top .navbar img.greldas-logo{
+    width: 128px;
+    height: 20px;
+}
+
+@media (max-width: 575.98px) {
+    header #navbar-top .navbar img.greldas-logo{
+        width: 100px;
+        height: 16px;
+    }
+}
+
+/*** LOGIN ***/
+header #navbar-top .registration,
+header #navbar-top .login{
+    background-color: rgba(200, 200, 200, 0.4);
+}
+
+/*** LANGUAGES CHOICES ***/
+
+header #navbar-top .languages-choice{
+    background-color: rgba(200, 200, 200, 0.4);
+}
+
+header #navbar-top .languages-choice .dropdown-menu{
+    min-width: 50px !important;
+}

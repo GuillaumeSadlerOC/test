@@ -1,0 +1,43 @@
+{% extends 'application/base.html' %}
+
+{% load i18n static %}
+
+<!-- SCSS -->
+{% block scss %}
+    <link type="text/x-scss" href="{% static 'flatpage/css/flatpage.scss' %}" rel="stylesheet" media="screen">
+{% endblock %}
+
+{% block breadcrumb %}
+<!-- MAIN BREADCRUMB -->
+<div id="main-breadcrumb" class="row p-1">
+    <div class="col-12">
+        <a href="{% url 'flatpage:index' %}">{% trans 'home'|capfirst %}</a> <i class="fas fa-chevron-right"></i> 
+        <a href="{% url 'flatpage:cookies' %}">{% trans 'cookies'|capfirst %}</a>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<!-- FLATPAGE -->
+<div id="flatpage" class="col-12 cookies">
+
+    <!-- PAGE TITLE -->
+    <div id="title" class="row p-1">
+        <h1 class="p-1">{% trans 'cookies'|capfirst %}</h1>
+    </div>
+
+    <!-- GRELDAS LOGO -->
+    <div class="row p-5">
+        <img class="img-responsive mx-auto" src="{% static 'application/lib/images/greldas/greldas-logo-large.png' %}" alt="greldas logo" width="300px"/>
+    </div>
+
+    <!-- COOKIES -->
+    <div class="row">
+        <div class="col-12">
+            <h2><i class="fas fa-cookie-bite"></i> {% trans 'cookies'|upper %}</h2>
+            {% trans 'For more informations about our cookies policy,'|capfirst %} <a href="{% url 'flatpage:tcu' %}">{% trans 'click-here' %}</a>
+        </div>
+    </div>
+    
+</div>
+{% endblock %}

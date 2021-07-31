@@ -1,0 +1,100 @@
+{% load i18n static %}
+
+<div class="container p-0">
+
+    <nav class="navbar navbar-dark navbar-expand-md w-100">
+
+        <!-- BRAND -->
+        <a class="navbar-brand p-1" href="{% url 'flatpage:index' %}">
+            <img class="mx-auto" src="{% static 'application/images/greldas/greldas-grey-logo-large.png' %}" onmouseover="this.src=image1" onmouseout="this.src=image2" class="d-inline-block align-top" alt="">
+        </a>
+
+        <!-- NAVBAR TOGGLER -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavFooterBottom" aria-controls="navbarNavFooterBottom" aria-expanded="false" aria-label="Toggle navigation !">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- NAVS -->
+        <div class="collapse navbar-collapse" id="navbarNavFooterBottom">
+
+            <ul class="navbar-nav ml-auto">
+
+                <li class="nav-item my-auto">
+                    <a class="d-block d-md-none d-lg-none d-xl-block nav-link" href="{% url 'flatpage:tcu' %}">
+                        {% trans 'therm and confition of use'|capfirst %}
+                    </a>
+                    <a class="d-none d-md-block d-lg-block d-xl-none nav-link" href="{% url 'flatpage:tcu' %}">
+                        {% trans 'tcu'|upper %}
+                    </a>
+                </li>
+
+                <li class="nav-item my-auto">
+                    <a class="d-block d-md-none d-lg-none d-xl-block nav-link" href="{% url 'flatpage:gcs' %}">
+                        {% trans 'general condition of sale'|capfirst %}
+                    </a>
+                    <a class=" d-none d-md-block d-lg-block d-xl-none nav-link" href="{% url 'flatpage:gcs' %}">
+                        {% trans 'gcs'|upper %}
+                    </a>
+                </li>
+
+                <li class="nav-item my-auto">
+                    <a class="nav-link" href="{% url 'flatpage:legal-notice' %}">
+                        {% trans 'legal notice'|capfirst %}
+                    </a>
+                </li>
+
+                <li class="nav-item my-auto">
+                    <a class="d-block d-md-none d-lg-block nav-link" href="{% url 'flatpage:privacy-policy' %}">
+                        {% trans 'privacy policy'|capfirst %}
+                    </a>
+                    <a class="nav-link d-none d-md-block d-lg-none" href="{% url 'flatpage:privacy-policy' %}">
+                        {% trans 'privacy'|capfirst %}
+                    </a>
+                </li>
+
+                <li class="nav-item my-auto">
+                    <a class="nav-link" href="{% url 'flatpage:cookies' %}">
+                        {% trans 'cookies'|capfirst %}
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </nav>
+
+</div>
+
+<div class="container p-0 copyright">
+
+    <nav class="navbar navbar-dark navbar-expand pt-0 pb-0 w-100">
+
+        <!-- COPYRIGHTS & CREDITS -->
+        <span class="d-none d-sm-block navbar-text my-auto">
+            <i class="far fa-copyright"></i> 2020 Greldas. {% trans 'all rights reserved.'|capfirst %}
+            <a href="{% url 'flatpage:credits' %}"> {% trans 'credits.'|capfirst %} </a>
+        </span>
+
+        <span class="d-block d-sm-none navbar-text my-auto">
+            <i class="far fa-copyright"></i> 2020 Greldas. <br> {% trans 'all rights reserved.'|capfirst %}
+        </span>
+
+        <!-- GRELDAS NETWORK -->
+        <span class="navbar-text ml-auto my-auto">
+
+            <a class="d-none d-sm-block nav-link" href="#">
+                <img class="mx-auto greldas-network" src="{% static 'application/images/greldas/greldas-network-logo-small.png' %}" alt="">
+                Greldas Network
+            </a>
+
+            <a class="d-block d-sm-none nav-link" href="#">
+                <img class="mx-auto greldas-network" src="{% static 'application/images/greldas/greldas-network-logo-small.png' %}" alt="">
+                Network
+            </a>
+
+        </span>
+
+    </nav>
+
+</div>

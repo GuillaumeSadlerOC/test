@@ -1,0 +1,25 @@
+/***
+*
+*   UTILITIES PROPERTIES
+*
+*   MODIFICATIONS
+*   Last modification date : 20/04/2020
+*
+*   AUTHORS & COPYRIGHT
+*   By : Guillaume Sadler
+*   For : Greldas
+*   Join us on www.greldas.com
+*
+***/
+
+/*** SOCIALS NETWORKS ***/
+$_FACEBOOK: rgba(59, 89, 153, 1);
+$_TWITTER: rgba(85, 172, 238, 1);
+$_INSTAGRAM: rgba(228, 64, 95, 1);
+$_GOOGLE: rgba(50, 50, 50, 1);
+
+/*** RESPONSIVE IMAGE ***/
+.img-responsive{
+    max-width: 100%;
+    height: auto;
+}

@@ -1,0 +1,83 @@
+{% extends 'application/base.html' %}
+
+{% load i18n static %}
+
+<!-- SCSS -->
+{% block scss %}
+    <link type="text/x-scss" href="{% static 'flatpage/css/flatpage.scss' %}" rel="stylesheet" media="screen">
+{% endblock %}
+
+{% block breadcrumb %}
+<!-- MAIN BREADCRUMB -->
+<div class="row p-1" id="main-breadcrumb">
+    <div class="col-12">
+        <a href="{% url 'flatpage:index' %}">{% trans 'home'|capfirst %}</a> <i class="fas fa-chevron-right"></i> 
+        <a href="{% url 'flatpage:legal-notice' %}">{% trans 'legal notice'|capfirst %}</a>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<!-- FLATPAGE -->
+<div id="flatpage" class="col-12 legal-notice">
+
+    <!-- PAGE TITLE -->
+    <div id="title" class="row p-1">
+        <h1 class="p-1">{% trans 'legal notice'|capfirst %}</h1>
+    </div>
+
+    <!-- GRELDAS LOGO -->
+    <div id="greldas-log" class="row p-5">
+        <img class="img-responsive mx-auto" src="{% static 'application/lib/images/greldas/greldas-logo-large.png' %}" alt="greldas logo" width="300px"/>
+    </div>
+    
+    <!-- PUBLISHER -->
+    <div id="publisher" class="row p-1">
+
+        <div class="col-12">
+            <h2><i class="fas fa-feather-alt"></i> {% trans 'publisher'|upper %}</h2>
+        </div>
+
+        <div class="col-12">
+            <b>Guillaume SADLER</b> <br>
+            <b>Auto-entreprise</b> <br> 
+            <b>186 rue Jacques Rivière</b> <br>
+            <b>30900 NÎMES</b> <br>
+            {% trans 'telephone'|capfirst %} : <b>+33 (0)6 52 49 39 87</b> <br>
+            E-mail : <b>contact@greldas.com</b> <br>
+            N°SIRET : <b>791 791 189 00024</b> <br>
+            Code APE : <b>6201Z Programmation informatique</b> <br>
+            TVA : <b>{% trans 'no subject to TVA'|capfirst %}</b>
+        </div>
+
+    </div>
+
+    <!-- PUBLISHING DIRECTOR -->
+    <div id="publishing-director" class="row p-1">
+
+        <div class="col-12">
+            <h2 class="mt-5"><i class="fas fa-feather-alt"></i> {% trans 'publishing director'|upper %}</h2>
+        </div>
+        <div class="col-12">
+            <b>Mr. Guillaume SADLER</b>
+        </div>
+
+    </div>
+
+    <!-- HOSTING -->
+    <div id="hosting" class="row p-1">
+
+        <div class="col-12">
+            <h2 class="mt-5"><i class="fas fa-feather-alt"></i> {% trans 'hosting'|upper %}</h2>
+        </div>
+
+        <div class="col-12">
+            <b>{% trans 'site hosted in France by the company OVH'|capfirst %}</b> <br>
+            <b>2 rue Kellermann - 59100 Roubaix - France</b> <br>
+            {% trans 'telephone'|capfirst %} : <b>1007</b>
+        </div>
+
+    </div>
+
+</div>   
+{% endblock %}

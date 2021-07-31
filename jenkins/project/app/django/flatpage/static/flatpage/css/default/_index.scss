@@ -1,0 +1,90 @@
+/***
+*
+*   FLATPAGE CSS
+*
+*   AUTHORS & COPYRIGHT
+*   By : Guillaume Sadler
+*   For : Greldas
+*   Join us on www.greldas.com
+*
+***/
+
+/*** GRIMORDAL TOP ***/
+#flatpage.index .grimordal-top{
+    height: 30vh;
+    background-image: url('/static/flatpages/images/index/grimordal-background.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-color: $_TRANSPARENT;
+    border-bottom: 10px solid $_GRELDAS_WEBSITE_COLOR;
+}
+
+#flatpage.index .grimordal-top h1{
+    color: $_GRELDAS_WEBSITE_COLOR;
+    font-size: 50px;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+#flatpage.index .grimordal-top h2{
+    color: rgba(250, 250, 250, 1);
+    font-size: 50px;
+    font-weight: bold;
+}
+
+#flatpage.index .grimordal-top .fa-asterisk{
+    color: rgba(250, 250, 250, 1);
+    font-size: 40px;
+    font-weight: bold;
+}
+
+@media (max-width: 575.98px) {
+    #flatpage.index .grimordal-top h1{
+        font-size: 40px;
+    }
+    #flatpage.index .grimordal-top h2{
+        font-size: 30px;
+    }
+    #flatpage.index .grimordal-top h3{
+        font-size: 40px;
+    }
+}
+
+/*** GRIMORDAL BOTTOM ***/
+#flatpage.index .grimordal-bottom{
+    height: 10vh;
+    background-image: url('/static/flatpages/images/index/grimordal-background.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-color: $_TRANSPARENT;
+}
+
+#flatpage.index .grimordal-bottom a{
+    color: rgba(250, 250, 250, 1);
+    font-size: 35px;
+}
+
+#flatpage.index .grimordal-bottom a:hover{
+    color: $_GRELDAS_WEBSITE_COLOR;
+    font-size: 35px;
+}
+
+@media (max-width: 575.98px) {
+    #flatpage.index .grimordal-bottom a{
+        font-size: 20px;
+    }
+}
+
+#flatpage.index .grimordal-top .dark-background,
+#flatpage.index .grimordal-bottom .dark-background{
+    background-color: rgba(18, 18, 18, 0.5);
+}
+
+#flatpage.index .grimordal-top .dark-background:hover,
+#flatpage.index .grimordal-bottom .dark-background:hover{
+    background-color: $_TRANSPARENT;
+}

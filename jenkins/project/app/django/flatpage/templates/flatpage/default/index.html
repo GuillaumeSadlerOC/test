@@ -1,0 +1,68 @@
+{% extends 'application/base.html' %}
+
+{% load i18n static %}
+
+<!-- SCSS -->
+{% block scss %}
+    <link type="text/x-scss" href="{% static 'flatpage/css/flatpage.scss' %}" rel="stylesheet" media="screen">
+{% endblock %}
+
+{% block breadcrumb %}
+<!-- MAIN BREADCRUMB -->
+<div class="row p-1 mb-1" id="main-breadcrumb">
+    <div class="col-12">
+        <a href="{% url 'flatpage:index' %}">{% trans 'home'|capfirst %}</a>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<!-- FLATPAGE -->
+<div id="flatpage" class="col-12 index">
+
+    <!-- GRIMORDAL TOP -->
+    <div class="row p-0 grimordal-top">
+
+        <a href="https://www.grimordal.com/" class="col-12">
+
+            <div class="row h-100 dark-background">
+
+                <div class="col-12 text-center my-auto">
+
+                    <h1>GRIMORDAL</h1>
+                    <h2><i class="fas fa-asterisk"></i><i class="fas fa-asterisk"></i> / <i class="fas fa-asterisk"></i><i class="fas fa-asterisk"></i> / 2021</h2>
+
+                </div>
+                
+            </div>
+
+        </a>
+
+    </div>
+
+    <!-- LAST POST -->
+    <div class="row">
+        
+    </div>
+
+    <!-- GRIMORDAL BOTTOM -->
+    <div class="row p-0 grimordal-bottom">
+
+        <a href="https://www.grimordal.com/" class="col-12">
+
+            <div class="row h-100 dark-background">
+
+                <div class="col-12 my-auto text-center">
+
+                    {{ 'www.grimordal.com'|upper }}
+
+                </div>
+
+            </div>
+
+        </a>
+
+    </div>
+
+</div>
+{% endblock %}

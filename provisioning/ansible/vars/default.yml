@@ -1,0 +1,6 @@
+---
+user_name: "ubuntu"
+user_group: "ubuntu"
+ssh_public_key_path: "/home/guillaume/.ssh/"
+ssh_public_key_name: "vagrant-ubuntu20.04.pub"
+java_args: "-Xmx4g"

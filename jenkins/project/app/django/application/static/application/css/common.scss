@@ -1,0 +1,218 @@
+/***
+*
+*   COMMON CSS
+*
+*   MODIFICATIONS
+*   Last modification date : 20/04/2020
+*
+*   AUTHORS & COPYRIGHT
+*   By : Guillaume Sadler
+*   For : Greldas
+*   Join us on www.greldas.com
+*
+***/
+
+/*** 
+*   IMPORTS 
+***/
+
+@import "./application/lib/css/greldas-properties";
+@import "./application/lib/css/utilities-properties";
+@import "./application/lib/css/default-properties";
+
+/***
+*   1 - APPLICATION PROPERTIES
+*       1.1 - BODY & HTML PROPERTIES 
+*       1.2 - LINK PROPERTIES
+*       1.3 - TITLES
+*   2 - APPLICATION STRUCTURE
+*       2.1 - HEADER
+*           2.1.1 - PROPERTIES
+*           2.1.2 - NAVBAR TOP
+*           2.1.3 - NAVBAR BOTTOM
+*       2.2 - MAIN
+*           2.2.1 - PROPERTIES
+*           2.2.2 - BREADCRUMB
+*           2.2.3 - CONTAINER
+*           2.2.4 - FOOTER
+*       2.3 - FOOTER
+*           2.3.1 - PROPERTIES
+*           2.2.2 - FOOTER TOP
+*           2.2.3 - FOOTER BOTTOM
+*   3 - CUSTOMIZATION
+*       3.1 - NAVBAR
+*       3.2 - FOOTER
+*       3.3 - MODAL SURCHARGE
+*       
+***/
+
+/***
+*   1 - APPLICATION PROPERTIES
+***/
+
+/*** 1.1 - BODY & HTML PROPERTIES ***/
+
+body{
+    font-family: $_TRANSPARENT;
+    font-size: $_DEFAULT_FF;
+    color: $_DEFAULT_FONT_COLOR;
+
+    height: 100%;
+    margin: 0;
+    padding: 0;
+
+    background-image: $_DEFAULT_BACKGROUND_JPG_IMAGE;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-color: $_TRANSPARENT;
+
+    overflow: auto; // For modals - see 1.1.1 section
+}
+
+html{
+    height: 100%;
+    overflow: hidden; // For modals - see 1.1.1 section
+}
+
+/*** 1.2 - LINK PROPERTIES ***/
+
+a{
+    font-weight: $_DEFAULT_LINK_FONT_WEIGHT;
+    font-style: $_DEFAULT_LINK_FONT_STYLE;
+    text-decoration: $_DEFAULT_LINK_TEXT_DECORATION;
+    color: $_DEFAULT_LINK_COLOR;
+}
+
+a:visited{
+    font-weight: $_DEFAULT_LINK_VISITED_FONT_WEIGHT;
+    font-style: $_DEFAULT_LINK_VISITED_FONT_STYLE;
+    text-decoration: $_DEFAULT_LINK_VISITED_TEXT_DECORATION;
+    color: $_DEFAULT_LINK_VISITED_COLOR;
+}
+
+a:hover{
+    font-weight: $_DEFAULT_LINK_HOVER_FONT_WEIGHT;
+    font-style: $_DEFAULT_LINK_HOVER_FONT_STYLE;
+    text-decoration: $_DEFAULT_LINK_HOVER_TEXT_DECORATION;
+    color: $_DEFAULT_LINK_HOVER_COLOR;
+}
+
+/*** 1.3 - TITLES ***/
+
+h1{
+    margin-bottom: $_DEFAULT_H1_MB;
+    font-size: $_DEFAULT_H1_FONT_SIZE;
+    font-weight: $_DEFAULT_H1_FONT_WEIGHT;
+}
+
+h2{
+    margin-bottom: $_DEFAULT_H2_MB;
+    font-size: $_DEFAULT_H2_FONT_SIZE;
+    font-weight: $_DEFAULT_H2_FONT_WEIGHT;
+}
+
+h3{
+    margin-bottom: $_DEFAULT_H3_MB;
+    color: $_DEFAULT_H3_COLOR;
+    font-size: $_DEFAULT_H3_FONT_SIZE;
+    font-weight: $_DEFAULT_H3_FONT_WEIGHT;
+}
+
+/***
+*   2 - APPLICATION STRUCTURE
+***/
+
+/*** 2.1 - HEADER ***/
+
+// 2.1.1 - PROPERTIES
+header{
+    background-color: $_TRANSPARENT;
+    min-height: 130px;
+}
+
+// 2.1.2 - NAVBAR TOP
+header #navbar-top{
+    background-color: $DARK_GREY_COLOR_2;
+    min-height: 4vh;
+}
+
+// 2.1.3 - NAVBAR BOTTOM
+header #navbar-bottom{
+    background-color: $DARK_GREY_COLOR_1;
+    min-height: 6vh;
+    border-bottom: 5px solid $_GRELDAS_BLOG_COLOR;
+}
+
+/*** 2.2 - MAIN ***/
+
+// 2.2.1 - PROPERTIES
+main{
+    background-color: $_TRANSPARENT;
+    min-height: 100vh;
+}
+
+// 2.2.2 - BREADCRUMB
+main #main-breadcrumb{
+    background-color: rgba(28, 28, 28, 0.9);
+    color: rgba(250, 250, 250, 1);
+    margin-bottom: 4px;
+}
+
+main #main-breadcrumb a{
+    color: rgba(250, 250, 250, 1);
+}
+
+main #main-breadcrumb a:hover{
+    text-decoration: underline;
+}
+
+main #main-breadcrumb .fa-chevron-right{
+    color: $_GRELDAS_WEBSITE_COLOR;
+}
+
+// 2.2.3 - CONTAINER
+main #main-container{
+    background-color: rgba(250, 250, 250, 1);
+    min-height: 100vh;
+}
+
+/*** 2.3 - FOOTER ***/
+
+// 2.3.1 - PROPERTIES
+footer{
+    background-color: $_TRANSPARENT;
+    min-height: 20vh;
+    margin-top: 60px;
+}
+
+// 2.3.2 - FOOTER TOP
+footer #footer-top{
+    background-color: $DARK_GREY_COLOR_1;
+    min-height: 15vh;
+}
+
+// 2.3.3 - FOOTER BOTTOM
+footer #footer-bottom{
+    background-color: $DARK_GREY_COLOR_2;
+    min-height: 5vh;
+    border-bottom: 5px solid $_GRELDAS_BLOG_COLOR;
+}
+
+/***
+*   3 - CUSTOMIZATION
+***/
+
+/*** 3.1 - NAVBAR ***/
+
+@import "navbar/navbar-top";
+@import "navbar/navbar-bottom";
+
+/*** 3.2 - FOOTER ***/
+
+@import "footer/footer-top";
+@import "footer/footer-bottom";
+
+/*** 3.3 - MODAL SURCHARGE ***/
+@import "surcharge/modal";

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+
+{% load i18n static compress %}
+{% get_current_language as LANGUAGE_CODE %}
+{% get_language_info_list for LANGUAGES as languages %}
+
+<html lang='{{ LANGUAGE_CODE }}' prefix="og: http://ogp.me/ns#">
+
+    <head>
+        <meta http-equiv="content-type" content="text/html" charset='UTF-8' />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <!--[if IE]>
+        <meta http-equiv="imagetoolbar" content="no" />
+        <![endif]-->
+        <meta name="Identifier-URL" content="{{ APP_URL }}" />
+        <meta name="language" content="{{ LANGUAGE_CODE }}" />
+        <!-- TITLE -->
+        <title>{{ meta_tags.title }}</title>
+        <meta name="description" content="{{ meta_tags.meta_description }}" />
+        {% if meta_tags.meta_keywords %}
+            <meta name="keywords" content="{{ meta_tags.meta_keywords }}" />
+        {% endif %}
+        <meta name="robots" content="{{ meta_tags.meta_robots }}" />
+        <!-- OG -->
+        {% for language in languages %}
+            {% if language.code == LANGUAGE_CODE %}
+                <meta property="og:locale" content="{{ language.code }}"/>
+            {% else %}
+                <meta property="og:locale:alternate" content="{{ language.code }}" />
+            {% endif %}
+        {% endfor %}
+        <meta property="og:type" content="{{ meta_tags.meta_og_type }}"/>
+        <meta property="og:site_name" content="{{ APP_NAME }}" />
+        <meta property="og:title" content="{{ meta_tags.meta_og_title }}"/>
+        <meta property="og:description" content="{{ meta_tags.meta_og_description }}" />
+        <meta property="og:url" content="{{ meta_tags.meta_og_url }}" />
+        <meta property="og:image" content="{{ meta_tags.meta_og_image }}" />
+        <meta property="og:image:type" content="{{ meta_tags.meta_og_image_type }}" />
+        <meta property="og:image:width" content="{{ meta_tags.meta_og_image_width }}" />
+        <meta property="og:image:height" content="{{ meta_tags.meta_og_image_height }}" />
+        <meta property="og:image:alt" content="{{ meta_tags.meta_og_image_alt }}" />
+        <!-- TWITTER -->
+        <meta name="twitter:card" content="{{ meta_tags.meta_twitter_card_type }}" />
+        <meta name="twitter:site" content="{{ meta_tags.meta_twitter_card_site }}" />
+		<meta name="twitter:creator" content="{{ meta_tags.meta_twitter_card_creator }}" />
+        <meta name="twitter:title" content="{{ meta_tags.meta_twitter_card_title }}" />
+		<meta name="twitter:description" content="{{ meta_tags.meta_twitter_card_description }}" />
+        <meta name="twitter:image" content="{{ meta_tags.meta_twitter_card_image }}" />
+        <meta name="twitter:image:alt" content="{{ meta_tags.meta_twitter_card_image_alt }}" />
+        <!-- I18N -->
+        <link rel="alternate" href="{{ meta_tags.alternate_fr }}" hreflang="fr" />
+        <link rel="alternate" href="{{ meta_tags.alternate_en }}" hreflang="en" />
+        <!-- FAVICON -->
+        <link rel="shortcut icon" type="image/png" href="{% static 'application/images/favicon.ico' %}"/>
+        <link rel="image_src" href="{{ meta_tags.image_src }}" />
+        <!-- GOOGLE FONTS -->
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
+        <link href="http://fonts.googleapis.com/css?family=Scope+One" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet" type="text/css" media="all" >
+        <!-- FONT AWESOME -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+        <!-- CSS -->
+        {% compress css %}<link type="text/x-scss" href="{% static 'application/lib/bootstrap/scss/bootstrap.scss' %}" rel="stylesheet" media="screen">{% endcompress %}
+        {% compress css %}<link type="text/x-scss" href="{% static 'application/css/common.scss' %}" rel="stylesheet" media="screen">{% endcompress %}
+        {% compress css %}{% block scss %} {% endblock %}{% endcompress %}
+        <!-- JAVASCRIPT -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+
+        <header class="container-fluid">
+
+            <div class="col-12 fixed-top">
+
+                <!-- NAVBAR TOP -->
+                <div class="row" id="navbar-top">
+                    {% if user.is_authenticated %}
+                        {% include 'application/navbar/auth-navbar-top.html' %}
+                    {% else %}
+                        {% include 'application/navbar/navbar-top.html' %}
+                    {% endif %}
+                </div>
+
+                <!-- NAVBAR BOTTOM -->
+                <div class="row" id="navbar-bottom">
+                    {% include 'application/navbar/navbar-bottom.html' %}
+                </div>
+
+            </div>
+
+        </header>
+
+        <main class="container" role="main">
+            
+            <!-- MAIN HEADER -->
+            <div class="row" id="main-header">
+                {% block header %} {% endblock %}
+            </div>
+
+            {% block breadcrumb %}{% endblock %}
+
+            <!-- MAIN CONTAINER -->
+            <div class="row" id="main-container">
+                {% block content %}{% endblock %}
+            </div>
+
+        </main>
+
+        <footer class="container-fluid">
+
+            <!-- FOOTER TOP -->
+            <div class="row" id="footer-top">
+                {% include 'application/footer/footer-top.html' %}
+            </div>
+
+            <!-- FOOTER BOTTOM -->
+            <div class="row" id="footer-bottom">
+                {% include 'application/footer/footer-bottom.html' %}
+            </div>
+
+        </footer>
+
+        {% block script %}{% endblock %}
+
+        <script type="text/javascript">
+            var image1 = "{% static 'application/lib/images/greldas/greldas-white-logo-large.png' %}";
+            var image2 = "{% static 'application/lib/images/greldas/greldas-grey-logo-large.png' %}";
+            var image3 = "{% static 'application/lib/images/greldas/greldas-grey-sm.png' %}";
+            var image4 = "{% static 'application/lib/images/greldas/greldas-yellow-sm.png' %}";
+        </script>
+
+    </body>
+
+</html>

@@ -1,0 +1,46 @@
+/***
+*
+*   FOOTER BOTTOM
+*
+*   MODIFICATIONS
+*   Last modification date : 20/04/2020
+*
+*   AUTHORS & COPYRIGHT
+*   By : Guillaume Sadler
+*   For : Greldas
+*   Join us on www.greldas.com
+*
+***/
+
+/*** VARIABLES ***/
+
+footer #footer-bottom{
+    font-size: 15px;
+}
+
+footer #footer-bottom .copyright .navbar{
+    border-top: 1px solid rgba(200, 200, 200, 0.2);
+}
+
+footer #footer-bottom img.greldas-network{
+    width: 20px;
+    height: 20px;
+}
+
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px){
+    footer #footer-bottom .navbar-brand {
+        margin-right: 0;
+    }
+    footer #footer-bottom .navbar-brand img{
+        width: 128px;
+        height: 20px;
+    }
+}
+
+@media (min-width: 576px){
+    footer #footer-bottom .navbar-brand img{
+        width: 160px;
+        height: 25px;
+    }
+}

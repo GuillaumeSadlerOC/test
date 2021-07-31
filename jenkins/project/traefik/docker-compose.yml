@@ -1,0 +1,57 @@
+version: '3.7'
+
+services:
+
+    traefik:
+        image: traefik:latest
+        restart: always
+        container_name: traefik
+        ports:
+          - "80:80" # <== http
+          - "8080:8080" # <== Jenkins dashboard
+          - "443:443" # <== https
+        command:
+            #### Commandes CLI de Traefik ####
+            ## API Settings - https://docs.traefik.io/operations/api/, endpoints - https://docs.traefik.io/operations/api/#endpoints ##
+            - --api=true
+            - --api.dashboard=true
+            - --api.debug=true 
+            ## Log Settings (options: ERROR, DEBUG, PANIC, FATAL, WARN, INFO) - https://docs.traefik.io/observability/logs/ ##
+            - --log.filePath=/logs/traefik.log
+            - --log.format=json
+            - --log.level=INFO
+            - --accesslog=true
+            - --accesslog.filepath=/logs/access.log
+            - --accesslog.format=json
+            - --accesslog.filters.statuscodes=200,300-302
+            - --accesslog.filters.retryattempts
+            - --accesslog.filters.minduration=10ms
+            ## Provider Settings - https://docs.traefik.io/providers/docker/#provider-configuration ##
+            - --providers.docker=true
+            - --providers.docker.exposedbydefault=false
+            - --providers.docker.network=traefik_webgateway
+            ## Entrypoints Settings - https://docs.traefik.io/routing/entrypoints/#configuration ##
+            - --entrypoints.web.address=:80
+            - --entrypoints.web-secured.address=:443
+            - --entrypoints.jenkins.address=:8080
+        volumes:
+            - /var/run/docker.sock:/var/run/docker.sock
+            - ./logs/access.log:/logs/access.log
+            - ./logs/traefik.log:/logs/traefik.log
+        networks:
+            - traefik_webgateway
+        labels:
+            - "traefik.enable=true"
+            - "traefik.docker.network=traefik_webgateway"
+            - "traefik.http.routers.traefik.rule=Host(
+                `traefik.localhost`,
+                )"
+            - "traefik.http.routers.traefik.service=api@internal"
+            - "traefik.http.routers.traefik.entrypoints=web"
+            - "traefik.http.routers.traefik.middlewares=traefik_auth"
+            - "traefik.http.middlewares.traefik_auth.basicauth.users=user:$$apr1$$DBdbNLFz$$OTbAO.6sMfkUVNAuJRCqw0"
+
+networks:
+    traefik_webgateway:
+        driver: bridge
+        name: traefik_webgateway
